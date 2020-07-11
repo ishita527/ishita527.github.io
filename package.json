@@ -1,0 +1,25 @@
+{
+  "name": "tic-tac-toe",
+  "version": "1.0.0",
+  "description": "Tic Tac Toe implementation with Javascript ES2015",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "serve": "webpack-dev-server"
+  },
+  "author": "ishita",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^3.6.0",
+    "extract-text-webpack-plugin": "^2.0.0-rc.3",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^7.3.1",
+    "style-loader": "^1.2.1",
+    "webpack": "^2.2.0-rc.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.7.2"
+  }
+}
