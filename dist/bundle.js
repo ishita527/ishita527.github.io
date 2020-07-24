@@ -437,6 +437,10 @@ function newGame() {
             winner = _b$isTerminal.winner;
 
         drawWinningLine(b.isTerminal());
+        if (winner != 'draw') {
+          var audio = new Audio("Cheering.mp3");
+          audio.play();
+        }
       }
       player_turn = 0; //Switch turns
       //Get computer's best move and update the UI
@@ -449,6 +453,10 @@ function newGame() {
               _winner = _b$isTerminal2.winner;
 
           drawWinningLine(b.isTerminal());
+          if (_winner != 'draw') {
+            var _audio = new Audio("tada.mp3");
+            _audio.play();
+          }
         }
         player_turn = 1; //Switch turns
       });

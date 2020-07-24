@@ -23,6 +23,7 @@ function removeClass(el, className) {
   }
 }
 
+
 //Helper function that takes the object returned from isTerminal() and adds a 
 //class to the board that will handle drawing the winning line's animation
 function drawWinningLine({ direction, row }) {
@@ -30,6 +31,8 @@ function drawWinningLine({ direction, row }) {
     board.className = `${direction}${row}`;
     setTimeout(() => { board.className += ' full'; }, 50);
 }
+
+
 
 //Starts a new game with a certain depth and a starting_player of 1 if human is going to start
 function newGame(depth = -1, starting_player = 1) {
@@ -70,6 +73,12 @@ function newGame(depth = -1, starting_player = 1) {
         if(b.isTerminal()) {
             let { winner } = b.isTerminal();
             drawWinningLine(b.isTerminal());
+            if(winner!='draw')
+            {
+                 let audio=new Audio("Cheering.mp3");
+                 audio.play();
+			}
+
         }
         player_turn = 0; //Switch turns
         //Get computer's best move and update the UI
@@ -80,6 +89,11 @@ function newGame(depth = -1, starting_player = 1) {
             if(b.isTerminal()) {
                 let { winner } = b.isTerminal();
                 drawWinningLine(b.isTerminal());
+                if(winner!='draw')
+                {
+                    let audio = new Audio("tada.mp3");
+                    audio.play();
+				}
             }
             player_turn = 1; //Switch turns
         });
